@@ -3,284 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Organisasi - OSIS SMAN 1 Gedeg</title>
+    <title>OSIS SMAN 1 Gedeg</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .search {
+            display: flex;
+        }
+        .search input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search button {
+            padding: 5px 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            width: 300%;
+            animation: slide 10s infinite;
+        }
+        .slide {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .org-chart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
         }
-        .level {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .news-section, .events-section {
+            margin-bottom: 40px;
+        }
+        .news-section h2, .events-section h2 {
+            color: #004080;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 10px;
+        }
+        .news-item, .event-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .news-item h3, .event-item h3 {
+            margin: 0 0 10px 0;
+        }
+        /* --- STYLE STRUKTUR ORGANISASI --- */
+        .struktur {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .struktur h2 {
+            color: #004080;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 10px;
         }
         .person {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            text-align: center;
-            width: 150px;
-            transition: transform 0.3s;
-        }
-        .person:hover {
-            transform: scale(1.05);
+            margin: 20px 0;
         }
         .person img {
             width: 80px;
-            height: 80px;
             border-radius: 50%;
-            margin-bottom: 10px;
-            border: 3px solid #667eea;
-        }
-        .person h3 {
-            margin: 5px 0;
-            color: #333;
-            font-size: 1.1em;
-        }
-        .person p {
-            margin: 0;
-            color: #666;
-            font-size: 0.9em;
-        }
-        .line {
-            width: 2px;
-            height: 30px;
-            background: #fff;
-            margin: 10px 0;
         }
         .sub-level {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 10px 0;
-        }
-        .sub-person {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-            padding: 10px;
-            margin: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 120px;
-            font-size: 0.8em;
+            gap: 20px;
+            margin-top: 10px;
         }
         .sub-person img {
             width: 50px;
-            height: 50px;
             border-radius: 50%;
-            margin-bottom: 5px;
-            border: 2px solid #764ba2;
         }
         footer {
             background-color: #004080;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 20px;
         }
         footer a {
             color: #cce7ff;
             text-decoration: none;
         }
+        @media (max-width: 768px) {
+            .sub-level { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    <h1>Struktur Organisasi OSIS SMAN 1 Gedeg</h1>
-    <p>Diagram hierarki dengan tampilan estetis untuk memudahkan pemahaman.</p>
-    
-    <div class="org-chart">
-        <!-- Level 1: Ketua Umum -->
-        <div class="level">
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Ketua+Umum" alt="Ketua Umum">
-                <h3>Brehnata Suryo Kencono Sajiwo</h3>
-                <p>Ketua Umum</p>
-            </div>
+    <header>
+        <div class="logo">OSIS SMAN 1 GEDEG</div>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang OSIS SMAN 1 GEDEG</a></li>
+                <li><a href="#">Visi Misi</a></li>
+                <li><a href="#">Program Kerja</a></li>
+                <li><a href="strukturorganisasi.html">Struktur Organisasi</a></li>
+                <li><a href="#">Informasi</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Cari...">
+            <button>Cari</button>
         </div>
-        <div class="line"></div>
-        
-        <!-- Level 2: Wakil, Sekretaris, Bendahara -->
-        <div class="level">
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Wakil+1" alt="Wakil 1">
-                <h3>Dinda Aurelia Putri S.</h3>
-                <p>Wakil Umum</p>
-            </div>
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Wakil+2" alt="Wakil 2">
-                <h3>A. Gustaf</h3>
-                <p>Wakil 1</p>
-            </div>
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekretaris+Umum" alt="Sekretaris Umum">
-                <h3>Dinian Eka Sellycia</h3>
-                <p>Sekretaris Umum</p>
-            </div>
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekretaris+1" alt="Sekretaris 1">
-                <h3>Cinta Kalea</h3>
-                <p>Sekretaris 1</p>
-            </div>
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Bendahara+Umum" alt="Bendahara Umum">
-                <h3>Natasya Artika M. J.</h3>
-                <p>Bendahara Umum</p>
-            </div>
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Bendahara+1" alt="Bendahara 1">
-                <h3>Novreza</h3>
-                <p>Bendahara 1</p>
-            </div>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400?text=UGM+Hero+1');">Selamat Datang di OSIS SMAN 1 Gedeg</div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400?text=UGM+Hero+2');">Inovasi dan Prestasi</div>
+            <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400?text=UGM+Hero+3');">Melangkah Bersama OSIS SMAN 1 Gedeg</div>
         </div>
-        <div class="line"></div>
-        
-        <!-- Level 3: Koordinator Sekbid 1-10, masing-masing dengan 5 anak -->
-        <div class="level">
-            <!-- Sekbid 1 -->
+    </section>
+
+    <main class="content">
+
+        <!-- BERITA DAN EVENT TETAP -->
+        <section class="news-section">
+            <h2>Berita Terbaru</h2>
+            <div class="news-item">
+                <h3>OSIS SMAN 1 Gedeg berhasil membuat Majalah MARS Edisi 64 2025</h3>
+                <p>OSIS SMAGE telah berhasil membuat Majalah Tahunan SMAGE yang berisikan kegiatan OSIS. <a href="#">Baca selengkapnya</a></p>
+            </div>
+            <div class="news-item">
+                <h3>Penerimaan Peserta Didik Baru 2026</h3>
+                <p>Pendaftaran PPDB 2026 telah dibuka. <a href="#">Daftar sekarang</a></p>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <h2>Event Mendatang</h2>
+            <div class="event-item">
+                <h3>Classmeeting</h3>
+                <p><strong>Tanggal:</strong> 15 Desember 2025 | <strong>Lokasi:</strong> SMAN 1 Gedeg</p>
+            </div>
+            <div class="event-item">
+                <h3>Olimpiade GErbang KErtasusila</h3>
+                <p><strong>Tanggal:</strong> Mei 2026 | <strong>Lokasi:</strong> SMAN 1 Gedeg</p>
+            </div>
+        </section>
+
+        <!-- ============================ -->
+        <!--     STRUKTUR ORGANISASI      -->
+        <!-- ============================ -->
+        <section class="struktur">
+            <h2>Struktur Organisasi OSIS</h2>
+
+            <!-- Sekbid 10 -->
             <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+1" alt="Koordinator Sekbid 1">
-                <h3>M. Zaky Ramadhan</h3>
-                <p>Koordinator Sekbid 1</p>
+                <img src="https://via.placeholder.com/80x80?text=Sekbid+10" alt="Koordinator Sekbid 10">
+                <h3>Nama Koordinator Sekbid 10</h3>
+                <p>Koordinator Sekbid 10</p>
+
                 <div class="sub-level">
                     <div class="sub-person">
-                        <img src="https://via.placeholder.com/50x50?text=Anggota+1" alt="M. Bobby Altafaris">
-                        <p>M. Bobby Altafaris</p>
+                        <img src="https://via.placeholder.com/50x50?text=A1">
+                        <p>Anggota 1</p>
                     </div>
                     <div class="sub-person">
-                        <img src="https://via.placeholder.com/50x50?text=Anggota+2" alt="Renata Anggun">
-                        <p>Renata Anggun</p>
+                        <img src="https://via.placeholder.com/50x50?text=A2">
+                        <p>Anggota 2</p>
                     </div>
                     <div class="sub-person">
-                        <img src="https://via.placeholder.com/50x50?text=Anggota+3" alt="Rostinitri Setya">
-                        <p>Rostinitri Setya</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 2 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+2" alt="Koordinator Sekbid 2">
-                <h3>Zeny</h3>
-                <p>Koordinator Sekbid 2</p>
-                <div class="sub-level">
-                    <div class="sub-person">
-                        <img src="https://via.placeholder.com/50x50?text=Anggota+1" alt="Fajar">
-                        <p>Fajar</p>
+                        <img src="https://via.placeholder.com/50x50?text=A3">
+                        <p>Anggota 3</p>
                     </div>
                     <div class="sub-person">
-                        <img src="https://via.placeholder.com/50x50?text=Anggota+2" alt="nama anggota">
-                        <p>nama anggota</p>
+                        <img src="https://via.placeholder.com/50x50?text=A4">
+                        <p>Anggota 4</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Sekbid 3 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+3" alt="Koordinator Sekbid 3">
-                <h3>Nama Koordinator Sekbid 3</h3>
-                <p>Koordinator Sekbid 3</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 4 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+4" alt="Koordinator Sekbid 4">
-                <h3>Nama Koordinator Sekbid 4</h3>
-                <p>Koordinator Sekbid 4</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 5 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+5" alt="Koordinator Sekbid 5">
-                <h3>Nama Koordinator Sekbid 5</h3>
-                <p>Koordinator Sekbid 5</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 6 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+6" alt="Koordinator Sekbid 6">
-                <h3>Nama Koordinator Sekbid 6</h3>
-                <p>Koordinator Sekbid 6</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 7 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+7" alt="Koordinator Sekbid 7">
-                <h3>Nama Koordinator Sekbid 7</h3>
-                <p>Koordinator Sekbid 7</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 8 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+8" alt="Koordinator Sekbid 8">
-                <h3>Nama Koordinator Sekbid 8</h3>
-                <p>Koordinator Sekbid 8</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A2" alt="Anggota 2"><p>Anggota 2</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A3" alt="Anggota 3"><p>Anggota 3</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A4" alt="Anggota 4"><p>Anggota 4</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A5" alt="Anggota 5"><p>Anggota 5</p></div>
-                </div>
-            </div>
-            
-            <!-- Sekbid 9 -->
-            <div class="person">
-                <img src="https://via.placeholder.com/80x80?text=Sekbid+9" alt="Koordinator Sekbid 9">
-                <h3>Nama Koordinator Sekbid 9</h3>
-                <p>Koordinator Sekbid 9</p>
-                <div class="sub-level">
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?text=A1" alt="Anggota 1"><p>Anggota 1</p></div>
-                    <div class="sub-person"><img src="https://via.placeholder.com/50x50?tex
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OSIS SMAN 1 Gedeg. Semua hak dilindungi.</p>
+        <p>Alamat: JL. PENDIDIKAN 55, Gedeg, Mojokerto | Email: osissmansage0@gmail.com</p>
+    </footer>
+</body>
+</html>
