@@ -70,10 +70,10 @@
         <p class="bio">All About Us!!</p> <!-- Ganti dengan bio Anda -->
         
         <div class="links">
-            <a href="https://instagram.com/osimpksmage" class="link-btn" onclick="handleClick('Instagram')">Instagram</a> <!-- Ganti href dengan link asli -->
-            <a href="https://twitter.com/osimpksmage" class="link-btn" onclick="handleClick('Twitter')">Twitter</a>
-            <a href="https://youtube.com/osimpksmage" class="link-btn" onclick="handleClick('YouTube')">YouTube</a>
-            <a href="https://example.com/website" class="link-btn" onclick="handleClick('Website')">Website</a>
+            <a href="https://www.instagram.com/osismpksmage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="link-btn" onclick="handleClick('Instagram')">Instagram</a> <!-- Ganti href dengan link asli -->
+            <a href="https://www.tiktok.com/@ofc.osismpksmage1?is_from_webapp=1&sender_device=pc" class="link-btn" onclick="handleClick('Tiktok')">Tiktok</a>
+            <a href="https://youtube.com/@smagetv?si=JShJzlcZpA410lpB" class="link-btn" onclick="handleClick('YouTube')">YouTube</a>
+            <a href="https://sman1gedeg.sch.id/" class="link-btn" onclick="handleClick('Website')">Website Resmi</a>
             <!-- Tambahkan lebih banyak link sesuai kebutuhan -->
         </div>
         
