@@ -75,7 +75,7 @@
         /* ------------ HERO SLIDER ------------ */
         .hero {
             position: relative;
-            height: 75vh;
+            height: 50vh;
             min-height: 250px;
             overflow: hidden;
         }
@@ -86,7 +86,7 @@
         }
         .slide {
             width: 100%;
-            height: 100%;
+            height: 50%;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -99,27 +99,10 @@
         }
 
         @keyframes slide {
-            /* Slide 1 berhenti 10 detik */
-            0%      { transform: translateX(0); }
-            33%     { transform: translateX(0); }
-
-            /* Pindah ke Slide 2 */
-            66%     { transform: translateX(-100%); }
-
-            /* Slide 2 berhenti 10 detik */
-            100%     { transform: translateX(-100%); }
-
-            /* Pindah ke Slide 3 */
-            133%     { transform: translateX(-200%); }
-
-            /* Slide 3 berhenti 10 detik */
-            55%     { transform: translateX(-200%); }
-
-            /* Kembali ke Slide 1 */
-            166%     { transform: translateX(0); }
-
-            /* Diam sebentar lagi sebelum loop ulang */
-            200%    { transform: translateX(0); }
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
         }
 
         /* ------------ CONTENT ------------ */
@@ -251,6 +234,7 @@
 
 </body>
 </html>
+
 
 
 
