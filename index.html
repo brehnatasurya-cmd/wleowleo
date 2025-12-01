@@ -99,10 +99,27 @@
         }
 
         @keyframes slide {
-            0% { transform: translateX(0); }
-            33% { transform: translateX(-100%); }
-            66% { transform: translateX(-200%); }
-            100% { transform: translateX(0); }
+            /* Slide 1 berhenti 10 detik */
+            0%      { transform: translateX(0); }
+            15%     { transform: translateX(0); }
+
+            /* Pindah ke Slide 2 */
+            20%     { transform: translateX(-100%); }
+
+            /* Slide 2 berhenti 10 detik */
+            35%     { transform: translateX(-100%); }
+
+            /* Pindah ke Slide 3 */
+            40%     { transform: translateX(-200%); }
+
+            /* Slide 3 berhenti 10 detik */
+            55%     { transform: translateX(-200%); }
+
+            /* Kembali ke Slide 1 */
+            60%     { transform: translateX(0); }
+
+            /* Diam sebentar lagi sebelum loop ulang */
+            100%    { transform: translateX(0); }
         }
 
         /* ------------ CONTENT ------------ */
@@ -234,6 +251,7 @@
 
 </body>
 </html>
+
 
 
 
