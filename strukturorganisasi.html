@@ -1,91 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Organisasi - OSIS SMAN 1 Gedeg</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .org-chart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .level {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .person {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            width: 150px;
-            transition: transform 0.3s;
-        }
-        .person:hover {
-            transform: scale(1.05);
-        }
-        .person img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid #667eea;
-            object-fit: cover;
-        }
-        .person h3 {
-            margin: 5px 0;
-            color: #333;
-            font-size: 1.1em;
-        }
-        .person p {
-            margin: 0;
-            color: #666;
-            font-size: 0.9em;
-        }
-        .line {
-            width: 2px;
-            height: 30px;
-            background: #fff;
-            margin: 10px 0;
-        }
-        .sub-level {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .sub-person {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 8px;
-            padding: 8px;
-            margin: 5px;
-            width: 110px;
-            font-size: 0.8em;
-        }
-        .sub-person img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #764ba2;
-            object-fit: cover;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Struktur Organisasi OSIS SMAN 1 Gedeg</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+    margin:0;
+    padding:20px;
+    text-align:center;
+}
+
+h1{
+    font-size:2.4em;
+    margin-bottom:20px;
+    text-shadow:2px 2px 4px rgba(0,0,0,.5);
+}
+
+/* CONTAINER */
+.org-chart{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+
+/* LEVEL UMUM */
+.level{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+/* LEVEL SEKBI (ANTI POTONG) */
+.level-sekbid{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:20px;
+    width:100%;
+    overflow-x:auto;
+    padding:20px 10px;
+    box-sizing:border-box;
+}
+
+/* CARD */
+.person{
+    background:rgba(255,255,255,.9);
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 4px 8px rgba(0,0,0,.3);
+    width:170px;
+    flex-shrink:0;
+    transition:.3s;
+}
+.person:hover{transform:scale(1.05)}
+
+.person img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #667eea;
+    object-fit:cover;
+}
+
+.person h3{
+    margin:6px 0;
+    color:#333;
+    font-size:1.05em;
+}
+.person p{
+    margin:0;
+    color:#666;
+    font-size:.9em;
+}
+
+/* GARIS */
+.line{
+    width:2px;
+    height:30px;
+    background:#fff;
+    margin:10px 0;
+}
+
+/* SUB ANGGOTA */
+.sub-level{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:10px;
+}
+.sub-person{
+    background:rgba(255,255,255,.85);
+    border-radius:8px;
+    padding:6px;
+    margin:4px;
+    width:110px;
+    font-size:.8em;
+}
+.sub-person img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:2px solid #764ba2;
+    object-fit:cover;
+}
+</style>
 </head>
 
 <body>
@@ -94,52 +118,56 @@
 
 <div class="org-chart">
 
-    <!-- LEVEL 1 -->
-    <div class="level">
-        <div class="person">
-            <img src="https://raw.githubusercontent.com/brehnatasurya-cmd/wleowleo/main/brehnata_for_struktur.jpg" alt="Ketua OSIS">
-            <h3>Brehnata Suryo Kencono Sajiwo</h3>
-            <p>Ketua Umum</p>
-        </div>
+<!-- LEVEL 1 -->
+<div class="level">
+    <div class="person">
+        <img src="https://raw.githubusercontent.com/brehnatasurya-cmd/wleowleo/main/brehnata_for_struktur.jpg"
+             alt="Ketua OSIS"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/80?text=Foto';">
+        <h3>Brehnata Suryo Kencono Sajiwo</h3>
+        <p>Ketua Umum</p>
     </div>
+</div>
 
-    <div class="line"></div>
+<div class="line"></div>
 
-    <!-- LEVEL 2 -->
-    <div class="level">
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Wakil Umum">
-            <h3>Dinda Aurelia Putri S.</h3>
-            <p>Wakil Umum</p>
-        </div>
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Wakil 1">
-            <h3>A. Gustaf</h3>
-            <p>Wakil 1</p>
-        </div>
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Sekretaris Umum">
-            <h3>Dinian Eka Sellycia</h3>
-            <p>Sekretaris Umum</p>
-        </div>
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Sekretaris 1">
-            <h3>Cinta Kalea</h3>
-            <p>Sekretaris 1</p>
-        </div>
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Bendahara Umum">
-            <h3>Natasya Artika M. J.</h3>
-            <p>Bendahara Umum</p>
-        </div>
-        <div class="person">
-            <img src="https://via.placeholder.com/80" alt="Bendahara 1">
-            <h3>Novreza</h3>
-            <p>Bendahara 1</p>
-        </div>
+<!-- LEVEL 2 -->
+<div class="level">
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>Dinda Aurelia Putri S.</h3><p>Wakil Umum</p></div>
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>A. Gustaf</h3><p>Wakil 1</p></div>
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>Dinian Eka Sellycia</h3><p>Sekretaris Umum</p></div>
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>Cinta Kalea</h3><p>Sekretaris 1</p></div>
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>Natasya Artika M. J.</h3><p>Bendahara Umum</p></div>
+    <div class="person"><img src="https://via.placeholder.com/80"><h3>Novreza</h3><p>Bendahara 1</p></div>
+</div>
+
+<div class="line"></div>
+
+<!-- LEVEL SEKBI (TIDAK AKAN TERPOTONG) -->
+<div class="level-sekbid">
+
+<div class="person">
+    <h3>M. Zaky Ramadhan</h3>
+    <p>Koordinator Sekbid 1</p>
+    <div class="sub-level">
+        <div class="sub-person">M. Bobby Altafaris</div>
+        <div class="sub-person">Renata Anggun</div>
+        <div class="sub-person">Rostinitri Setya</div>
     </div>
+</div>
+
+<div class="person"><h3>Zanubah</h3><p>Koordinator Sekbid 2</p></div>
+<div class="person"><h3>Sintawati</h3><p>Koordinator Sekbid 3</p></div>
+<div class="person"><h3>Vita</h3><p>Koordinator Sekbid 4</p></div>
+<div class="person"><h3>Velicia Novita H.</h3><p>Koordinator Sekbid 5</p></div>
+<div class="person"><h3>Dewi Anggraeni P. S.</h3><p>Koordinator Sekbid 6</p></div>
+<div class="person"><h3>Zivana Putri Letzia</h3><p>Koordinator Sekbid 7</p></div>
+<div class="person"><h3>Efayra Renata</h3><p>Koordinator Sekbid 8</p></div>
+<div class="person"><h3>Oliv</h3><p>Koordinator Sekbid 9</p></div>
+<div class="person"><h3>Queensa</h3><p>Koordinator Sekbid 10</p></div>
 
 </div>
 
+</div>
 </body>
 </html>
